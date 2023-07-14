@@ -8,7 +8,7 @@ recognition.start();
 recognition.addEventListener('result', onSpeak);
 
 function onSpeak(event) {
-    chuteFinal = event.results[0][0].transcript;
+    chuteFinal = event.results[0][0].transcript; //Acessando a propriedade que eu quero
     exibeChuteNaTela(chuteFinal);
     verificaChuteValido(chuteFinal);
 };
@@ -20,4 +20,4 @@ function exibeChuteNaTela(chuteFinal) {
     `
 };
 
-recognition.addEventListener('end', () => recognition.start());
+recognition.addEventListener('end', () => recognition.start()); //Fazer com que o microfone capture novamente assim que acaba, tornando "infinito"

@@ -6,6 +6,8 @@ function gerarNumeroSecreto() {
     return parseInt(Math.random() * maiorValor + 1);
 };
 
+console.log(numeroSecreto);
+
 //Criar variaveis para menor valor e maior valor e depois alterar os spans para mostrá-los
 
 const elementoMenorValor = document.querySelector('#menor-valor');
