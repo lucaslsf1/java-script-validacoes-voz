@@ -10,12 +10,14 @@ recognition.addEventListener('result', onSpeak);
 function onSpeak(event) {
     chuteFinal = event.results[0][0].transcript;
     exibeChuteNaTela(chuteFinal);
+    verificaChuteValido(chuteFinal);
 };
 
 function exibeChuteNaTela(chuteFinal) {
     elementoChute.innerHTML = `
         <div>Você disse: </div>
         <span class="box">${chuteFinal}</span>
-        <div>O número secreto é maior <i class="fa-solid fa-arrow-up-long"></i> 
     `
 };
+
+recognition.addEventListener('end', () => recognition.start());
