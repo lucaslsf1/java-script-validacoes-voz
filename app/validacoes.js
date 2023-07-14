@@ -2,8 +2,19 @@ function verificaChuteValido(chuteFinal) {
     const numero = +chuteFinal; // Transformando o chute que vem em string em inteiro(tenta converter automaticamente ao somar +)
 
     if(chuteForInvalido(numero)) { //Verificando se não é um NaN
+       if(chuteFinal === 'game over') {
+
+        document.body.innerHTML = `
+        <h2>GAME OVER !!<h2/>
+        <button id="btn-jogar" class="btn-jogar"> Jogar novamente </button>
+        `
+        document.body.style.backgroundColor = "red";
+
+       } else {
+
         elementoChute.innerHTML += `<div>Valor inválido</div>`;
-        return
+       }
+       
     };
 
     if(maiorOuMenorQueONumeroSecreto(numero)) {
