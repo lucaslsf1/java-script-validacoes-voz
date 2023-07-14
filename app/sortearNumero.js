@@ -8,7 +8,7 @@ function gerarNumeroSecreto() {
 
 console.log(`Número Secreto: ${numeroSecreto}`);
 
-//Criar variaveis para menor valor e maior valor e depois buscar os spans
+//Criar variaveis para menor valor e maior valor e depois alterar os spans para mostrá-los
 
 const elementoMenorValor = document.querySelector('#menor-valor');
 elementoMenorValor.innerHTML = menorValor;

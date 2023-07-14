@@ -1,0 +1,21 @@
+var SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+const elementoChute = document.querySelector('#chute');
+
+const recognition = new SpeechRecognition(); 
+recognition.lang = 'pt-Br';
+recognition.start();
+
+recognition.addEventListener('result', onSpeak);
+
+function onSpeak(event) {
+    chuteFinal = event.results[0][0].transcript;
+    exibeChuteNaTela(chuteFinal);
+};
+
+function exibeChuteNaTela(chuteFinal) {
+    elementoChute.innerHTML = `
+        <div>Você disse: </div>
+        <span class="box">${chuteFinal}</span>
+        <div>O número secreto é maior <i class="fa-solid fa-arrow-up-long"></i> 
+    `
+};
